@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:todoapp/registerform.dart';
+import 'package:todoapp/start_screen.dart';
 
 class Loginform extends StatelessWidget {
   const Loginform({super.key});
@@ -8,7 +10,12 @@ class Loginform extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xff1D1D1D),
       appBar: AppBar(backgroundColor: Color(0xff1D1D1D),
-      leading: Icon(Icons.arrow_back_ios,color: Colors.white,),),
+      leading: InkWell(
+        onTap: () {
+          Navigator.pop(context, MaterialPageRoute(builder: (context) =>  StartScreen()),);
+
+        },
+        child: Icon(Icons.arrow_back_ios,color: Colors.white,)),),
       body:Padding(
         padding: const EdgeInsets.only(left: 20),
         child: Column(
@@ -119,26 +126,31 @@ class Loginform extends StatelessWidget {
           ),
           SizedBox(height: 100,),
             Center(
-              child: RichText(
-                      textAlign: TextAlign.center,
-                      text:TextSpan(
-                      text: ('Don''t have an account? '),
-                      style: TextStyle(
-                        color:Color(0XFF979797),
-                        fontSize: 16,
-                      ),
-                      children: <TextSpan>[
-                        TextSpan(text:'Register',
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) =>  Registerform()),);
+                },
+                child: RichText(
+                        textAlign: TextAlign.center,
+                        text:TextSpan(
+                        text: ('Don''t have an account? '),
                         style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
+                          color:Color(0XFF979797),
                           fontSize: 16,
-              
-                        ))
-              
-                      ],
+                        ),
+                        children: <TextSpan>[
+                          TextSpan(text:'Register',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                
+                          ))
+                
+                        ],
+                        ),
                       ),
-                    ),
+              ),
             ),
         
           ],

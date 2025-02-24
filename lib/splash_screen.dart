@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:todoapp/home_screen.dart';
 import 'package:todoapp/onboarding/onboarding_1.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -15,10 +16,10 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     Timer(Duration(seconds: 3),()
     {
-      Navigator.of(context).push(
+      Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder:(context)
         {
-          return Onboarding1();
+          return HomeScreen();
         }
 
 

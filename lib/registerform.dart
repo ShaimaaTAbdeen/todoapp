@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:todoapp/loginform.dart';
+import 'package:todoapp/start_screen.dart';
 
 class Registerform extends StatelessWidget {
   const Registerform({super.key});
@@ -8,7 +10,12 @@ class Registerform extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xff1D1D1D),
       appBar: AppBar(backgroundColor: Color(0xff1D1D1D),
-      leading: Icon(Icons.arrow_back_ios,color: Colors.white,),),
+      leading: InkWell(
+        onTap: () {
+          Navigator.pop(context, MaterialPageRoute(builder: (context) =>  StartScreen()),);
+
+        },
+        child: Icon(Icons.arrow_back_ios,color: Colors.white,)),),
       body:Padding(
         padding: const EdgeInsets.only(left: 20),
         child: Column(
@@ -156,27 +163,32 @@ class Registerform extends StatelessWidget {
           ),
           SizedBox(height: 20,),
             Center(
-              child: RichText(
-                      textAlign: TextAlign.center,
-                      text:TextSpan(
-                      text: ('Already have an account? '),
-                      style: TextStyle(
-                        color:Color(0XFF979797),
-                        
-                        fontSize: 16,
-                      ),
-                      children: <TextSpan>[
-                        TextSpan(text:'Login',
+              child: InkWell(
+                onTap: () {
+                  Navigator.pop(context, MaterialPageRoute(builder: (context) =>  Loginform()),);
+                },
+                child: RichText(
+                        textAlign: TextAlign.center,
+                        text:TextSpan(
+                        text: ('Already have an account? '),
                         style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
+                          color:Color(0XFF979797),
+                          
                           fontSize: 16,
-              
-                        ))
-              
-                      ],
+                        ),
+                        children: <TextSpan>[
+                          TextSpan(text:'Login',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                
+                          ))
+                
+                        ],
+                        ),
                       ),
-                    ),
+              ),
             ),
         
           ],
