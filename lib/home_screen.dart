@@ -37,6 +37,39 @@ class HomeScreen extends StatelessWidget {
               selectionColor: Colors.blueAccent,
               selectedTextColor: Colors.white,
                ),
+               SizedBox(
+                height: 50,
+               ),
+               Image.asset('assets/images/backgroundHS.png',
+               height: MediaQuery.of(context).size.height*0.5,
+               ),
+               SizedBox(height: 30,),
+               Padding(
+                 padding: const EdgeInsets.only(left: 300),
+                 child: ElevatedButton(onPressed:() {
+                   
+                 },
+                 style: ElevatedButton.styleFrom(
+                  shape: CircleBorder(),
+                  backgroundColor: Color(0xff8875FF),
+                  
+                 ),
+                 child:Icon(Icons.add,color: Colors.white,)
+                 ),
+               ),
+               /*Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(100),
+                  border: Border.all(width: 10)
+                ),
+                 child: FloatingActionButton(onPressed:() {
+                   
+                 },
+                 
+                 backgroundColor: Color(0xff8875FF),
+                 child:Icon(Icons.add,color: Colors.white,)
+                 ),
+               )*/
           ],
         ),
      );
