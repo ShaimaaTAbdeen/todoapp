@@ -1,6 +1,7 @@
 import 'package:date_picker_timeline/date_picker_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:todoapp/add_task.dart';
 //import 'package:date_time_picker/date_time_picker.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -13,6 +14,9 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xff1D1D1D),
       appBar: AppBar(
+        leading: Icon(Icons.arrow_back_ios_new,
+        color:Colors.white,
+        size: 30,),
         backgroundColor:Color(0xff1D1D1D) ,
         title: Text(dateFormatted,style: 
         TextStyle(
@@ -47,6 +51,8 @@ class HomeScreen extends StatelessWidget {
                Padding(
                  padding: const EdgeInsets.only(left: 300),
                  child: ElevatedButton(onPressed:() {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) =>  AddTask()),);
+
                    
                  },
                  style: ElevatedButton.styleFrom(
