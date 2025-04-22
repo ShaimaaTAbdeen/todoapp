@@ -42,11 +42,92 @@ class HomeScreen extends StatelessWidget {
               selectedTextColor: Colors.white,
                ),
                SizedBox(
-                height: 50,
+                height: 30,
                ),
-               Image.asset('assets/images/backgroundHS.png',
+
+               Stack(
+                 children:[
+                  Padding(
+                    padding: const EdgeInsets.only(left:8.0),
+                    child: Container(
+                    width:MediaQuery.of(context).size.width*0.95,
+                    height:MediaQuery.of(context).size.height*0.20,
+                    decoration:BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color:Color(0xFFFF4666),
+                    ),
+                    
+                                     ),
+                  ),
+                 Padding(
+                   padding: const EdgeInsets.symmetric(horizontal:20.0,vertical: 10.0),
+                   child: Row(
+                     children: [
+                       Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('Task 1',style: 
+                          TextStyle(
+                            color: Colors.white,
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold,
+                          ),),
+                          SizedBox(height: 10,),
+                          Row(
+                            children: [
+                              Image.asset('assets/images/timer.png'),
+                              SizedBox(width: 10,),
+                              Text('09:33 pm',style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                              ),),
+                              SizedBox(width: 10,),
+                              Text('-',style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                              ),),
+                              SizedBox(width: 10,),
+                              Text('09:48 pm',style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                              ),),
+                       
+                            ],
+                          ),
+                          SizedBox(height: 10,),
+                       
+                          Text('Learn Dart',style: 
+                          TextStyle(
+                            color: Colors.white,
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold,
+                          ),),
+                       
+                        ],
+                        
+                       
+                       ),
+                       SizedBox(width: 120,),
+
+                       Container(
+                        height: 80,
+                        width: 2,
+                        color: Colors.white,
+                       ),
+                       SizedBox(width:10),
+                       Image.asset('assets/images/TODO.png'),
+                     ],
+                   ),
+                 ),
+                 ]
+               ),
+               /*
+              Image.asset('assets/images/backgroundHS.png',
                height: MediaQuery.of(context).size.height*0.5,
-               ),
+               ),*/
                SizedBox(height: 30,),
                Padding(
                  padding: const EdgeInsets.only(left: 300),
